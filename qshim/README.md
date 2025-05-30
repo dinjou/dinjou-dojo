@@ -3,11 +3,9 @@
 
 Create a **system‑wide command alias** in one line.
 
-`qshim.sh` is a tiny Bash helper that symlinks any executable to `/usr/local/bin/<name>`, letting you invoke it like a built‑in command.
-
- 
-
 ## Features
+
+`qshim.sh` is a tiny Bash helper that symlinks any executable to `/usr/local/bin/<name>`, letting you invoke it like a built‑in command.
 
 * **Fast:** one command (`qshim -n NAME -f FILE`) and you’re done.
 * **Safe:** refuses to overwrite existing names and checks that the target is executable.
