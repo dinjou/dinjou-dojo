@@ -1,4 +1,5 @@
 # quickShim (qshim.sh)
+*v0.2 - adds basic interpreter detection*
 
 Create a **system‑wide command alias** in one line.
 
@@ -35,6 +36,7 @@ curl -o ~/ubin/qshim https://raw.githubusercontent.com/dinjou/dinjou-dojo/main/b
 chmod +x ~/ubin/qshim
 echo 'export PATH="$HOME/ubin:$PATH"' >> ~/.bashrc   # if not already set
 source ~/.bashrc
+sh ~/ubin/qshim.sh -n qshim -f ~/ubin/qshim.sh
 ```
 
  
@@ -45,11 +47,15 @@ source ~/.bashrc
 qshim -n <command-name> -f <path/to/executable>
 ```
 
+> [!NOTE]
+> If the target isn’t already executable, qshim v0.2 auto-wraps Python, Bash, Ruby, or Node scripts. Otherwise add a proper she-bang and `chmod +x` your script file.
+
 Examples:
 
 ```bash
 # Make pivot.py available as the command “pivot”
 qshim -n pivot -f ~/Documents/1-Projects/pivot/pivot.py
+*fun fact, this didn't work in the previous version but was here in the readme because I'm not very bright.*
 
 # Shim a Node script
 qshim --name todo --file ./scripts/todo-cli.js
